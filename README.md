@@ -9,6 +9,14 @@ probabilistic-forecast calibration, and Kelly position sizing. It runs entirely 
 seeded synthetic price data generated in-process — no downloads, no API keys, no
 external services.
 
+**Highlights (illustrative, on synthetic data):** the demo runs **19 walk-forward
+out-of-sample folds** and scores a deliberately overconfident synthetic forecaster
+at a **Brier score of 0.2098** (vs the 0.25 always-0.5 baseline) — and the
+reliability diagram surfaces that forecaster's *intentional* overconfidence at the
+tails (top bin predicts 0.951 but only 0.836 of those events occur). These are
+reproducible outputs of `python examples/demo.py`, **not** a real trading edge — see
+[WRITEUP.md](WRITEUP.md). CI runs `pytest` on Python 3.11 and 3.12 on every push/PR.
+
 ---
 
 ## What this demonstrates
